@@ -1,0 +1,11 @@
+{
+  "configurations": [
+    {
+      "envFile": "${workspaceFolder}/demo/.env",
+      "command": "pnpm -F astro-sveltia-cms-demo dev",
+      "name": "dev",
+      "request": "launch",
+      "type": "node-terminal"
+    }
+  ]
+}

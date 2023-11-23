@@ -1,0 +1,47 @@
+---
+const repoUrl = "https://github.com/majesticostudio/astro-sveltia-cms";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Sveltia CMS Integration</title>
+	</head>
+	<body>
+		<div class="flex-col-center">
+			<h1><a href={`${repoUrl}/tree/main/demo`}>astro-sveltia-cms-demo</a></h1>
+			<p>A demo for the Astro integration <a href={repoUrl} target="_blank">astro-sveltia-cms</a></p>
+
+			<p class="flex-center">
+				<a href="https://npmjs.com/package/astro-sveltia-cms">
+					<img src="https://img.shields.io/npm/v/astro-sveltia-cms" alt="astro-sveltia-cms" />
+				</a>
+				<a href="https://npmjs.com/package/astro-sveltia-cms">
+					<img src="https://img.shields.io/npm/dt/astro-sveltia-cms" alt="npm download count" />
+				</a>
+				<hr style="width: 50%" />
+			</p>
+
+			<p>Sveltia CMS dashboard is at <a href="/admin">/admin</a>.</p>
+			<p>Sveltia CMS configuration is at <a href="/admin/config.yml">/admin/config.yml</a>.</p>
+			<p>OAuth backend routes are at <a href="/oauth">/oauth</a> and <a href="/oauth/callback">/oauth/callback</a>.</p>
+		</div>
+	</body>
+</html>
+
+<style>
+	.flex-col-center {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.flex-center {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+	}
+</style>
