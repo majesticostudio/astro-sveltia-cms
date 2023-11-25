@@ -1,5 +1,10 @@
 ---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
 const repoUrl = "https://github.com/majesticostudio/astro-sveltia-cms";
+
+const posts = await getCollection("post");
 ---
 
 <html lang="en">
@@ -28,6 +33,18 @@ const repoUrl = "https://github.com/majesticostudio/astro-sveltia-cms";
 			<p>Sveltia CMS dashboard is at <a href="/admin">/admin</a>.</p>
 			<p>Sveltia CMS configuration is at <a href="/admin/config.yml">/admin/config.yml</a>.</p>
 			<p>OAuth backend routes are at <a href="/oauth">/oauth</a> and <a href="/oauth/callback">/oauth/callback</a>.</p>
+		</div>
+		<hr />
+		<h4 class="flex-center">Example posts</h4>
+		<div class="flex-center">
+			{
+				posts.map((post, index: number) => (
+					<div class="flex-col-center ">
+						<Image src={post.data.img} alt={post.data.title} height={100} />
+						<p>{post.data.title}</p>
+					</div>
+				))
+			}
 		</div>
 	</body>
 </html>

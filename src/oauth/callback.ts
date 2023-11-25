@@ -3,29 +3,29 @@ import tiny from "tiny-json-http";
 import { clientId, clientSecret, tokenUrl } from "./_config";
 
 export const GET: APIRoute = async ({ url, redirect }) => {
-  const data = {
-    code: url.searchParams.get("code"),
-    client_id: clientId,
-    client_secret: clientSecret,
-  };
+	const data = {
+		code: url.searchParams.get("code"),
+		client_id: clientId,
+		client_secret: clientSecret,
+	};
 
-  let script;
+	let script;
 
-  try {
-    const { body } = await tiny.post({
-      url: tokenUrl,
-      data,
-      headers: { Accept: "application/json" },
-    });
+	try {
+		const { body } = await tiny.post({
+			url: tokenUrl,
+			data,
+			headers: { Accept: "application/json" },
+		});
 
-    const content = {
-      token: body.access_token,
-      provider: "github",
-    };
+		const content = {
+			token: body.access_token,
+			provider: "github",
+		};
 
-    // This is what talks to the Sveltia CMS page.
-    // Using window.postMessage we give it the token details in a format it's expecting
-    script = `
+		// This is what talks to the Sveltia CMS page.
+		// Using window.postMessage we give it the token details in a format it's expecting
+		script = `
       <script>
         const receiveMessage = (message) => {
           window.opener.postMessage(
@@ -41,12 +41,12 @@ export const GET: APIRoute = async ({ url, redirect }) => {
       </script>
     `;
 
-    return new Response(script, {
-      headers: { "Content-Type": "text/html" },
-    });
-  } catch (err) {
-    // If we hit an error we'll handle that here
-    console.log(err);
-    return redirect("/?error=😡");
-  }
+		return new Response(script, {
+			headers: { "Content-Type": "text/html" },
+		});
+	} catch (err) {
+		// If we hit an error we'll handle that here
+		console.log(err);
+		return redirect("/?error=😡");
+	}
 };
