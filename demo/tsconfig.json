@@ -7,6 +7,7 @@
 			"@src/*": ["*"],
 			"@pages/*": ["pages/*"],
 			"@assets/*": ["assets/*"]
-		}
+		},
+		"types": ["astro/client"]
 	}
 }

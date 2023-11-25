@@ -30,6 +30,7 @@ jobs:
               run: echo "new tag $NEW_TAG"
 
     build-and-publish:
+        needs: [bump-version]
         name: Build and Publish
         runs-on: ubuntu-latest
         steps:
