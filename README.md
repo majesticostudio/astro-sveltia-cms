@@ -14,6 +14,8 @@
   </a>
 </p>
 
+For an astro sveltia example you can look at [astro-starter](https://github.com/zankhq/astro-starter)
+
 This repo does the same thing of https://github.com/dorukgezici/astro-decap-cms-oauth but it use Sveltia instead of Decap CMS.
 
 This integration automatically mounts the Sveltia CMS admin dashboard to `/admin` and custom OAuth authentication backend routes to `/oauth`, `/oauth/callback` using GitHub as the provider.
