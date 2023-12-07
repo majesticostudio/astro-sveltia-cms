@@ -28,20 +28,20 @@ export default function sveltiaCMS(options: SveltiaCMSOptions): AstroIntegration
 				// mount SveltiaCMS admin dashboard
 				injectRoute({
 					pattern: adminRoute,
-					entryPoint: "astro-sveltia-cms/src/admin.astro",
+					entrypoint: "astro-sveltia-cms/src/admin.astro",
 				});
 
 				if (!oauthDisabled) {
 					// OAuth backend - sign in route
 					injectRoute({
 						pattern: oauthLoginRoute,
-						entryPoint: "astro-sveltia-cms/src/oauth/index.ts",
+						entrypoint: "astro-sveltia-cms/src/oauth/index.ts",
 					});
 
 					// OAuth backend - callback route
 					injectRoute({
 						pattern: oauthCallbackRoute,
-						entryPoint: "astro-sveltia-cms/src/oauth/callback.ts",
+						entrypoint: "astro-sveltia-cms/src/oauth/callback.ts",
 					});
 				}
 			},
