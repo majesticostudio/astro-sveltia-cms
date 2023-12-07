@@ -38,11 +38,11 @@ Add the integration and set output to `server` in your `astro.config.mjs` file:
 
 ```js
 import { defineConfig } from "astro/config";
-import { sveltiaCms } from "astro-sveltia-cms";
+import { sveltiaCMS } from "astro-sveltia-cms";
 
 export default defineConfig({
     ...,
-    integrations: [sveltiaCms()],
+    integrations: [sveltiaCMS()],
     output: "server",
 });
 ```
@@ -100,7 +100,7 @@ To disable injecting OAuth routes, set `oauthDisabled` to `true` in `astro.confi
 
 ```js
 import { defineConfig } from "astro/config";
-import { sveltiaCms } from "astro-sveltia-cms";
+import { sveltiaCMS } from "astro-sveltia-cms";
 
 export default defineConfig({
     ...,
