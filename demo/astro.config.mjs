@@ -7,6 +7,6 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
 	site: "https://astro-sveltia-cms.vercel.app",
 	integrations: [sveltiaCms()],
-	output: "server",
+	output: "hybrid",
 	adapter: cloudflare(),
 });
