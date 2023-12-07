@@ -29,6 +29,7 @@ export default function sveltiaCMS(options: SveltiaCMSOptions): AstroIntegration
 				injectRoute({
 					pattern: adminRoute,
 					entrypoint: "astro-sveltia-cms/src/admin.astro",
+					prerender: false,
 				});
 
 				if (!oauthDisabled) {
@@ -36,12 +37,14 @@ export default function sveltiaCMS(options: SveltiaCMSOptions): AstroIntegration
 					injectRoute({
 						pattern: oauthLoginRoute,
 						entrypoint: "astro-sveltia-cms/src/oauth/index.ts",
+						prerender: false,
 					});
 
 					// OAuth backend - callback route
 					injectRoute({
 						pattern: oauthCallbackRoute,
 						entrypoint: "astro-sveltia-cms/src/oauth/callback.ts",
+						prerender: false,
 					});
 				}
 			},
